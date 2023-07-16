@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ZoomControl</string>
+    <string name="txt">Hey whats up i m here . today we discuss on app development.There are n cities in Saint Waterloo. They are connected with n − 1 undirected airlines, such that it is
+possible to get from any city to any other city by using airlines.
+Let’s say that the two cities are in a good relationship if it is possible to get from one to another using at
+most x flights.
+Additionally, let’s say that the set of k cities is friendly if all pairs of cities in it are in a good relationship.
+You need to find the number of friendly sets of cities for each k, such that 1 ≤ k ≤ n. As these values
+may be very large, find them modulo 998 244 353.Everyone knows that bit operations (e.g. bitwise XOR) are faster than recursive functions (such as the greatest
+common divisor, GCD). To impress your internship supervisors you replaced, in the company’s flagship project,
+all instances of 𝑔𝑐𝑑(𝑥, 𝑦) with much quicker 𝑥𝑜𝑟(𝑥, 𝑦).
+That was yesterday, on Friday. Now you start thinking whether you should have tested your new code before
+deploying to production... Well, better late than never. Given a sequence of numbers 𝑎1 , . . . , 𝑎𝑛 , determine how
+many pairs (𝑖, 𝑗)  actually satisfy 𝑔𝑐𝑑(𝑎𝑖 , 𝑎𝑗 ) = 𝑥𝑜𝑟(𝑎𝑖 , 𝑎𝑗 ). Recall that 𝑔𝑐𝑑(𝑥, 𝑦) denotes the
+greatest common divisor of 𝑥 and 𝑦, while 𝑥𝑜𝑟(𝑥, 𝑦) is the bitwise-XOR operation on 𝑥 and 𝑦</string>
+</resources>

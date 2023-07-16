@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ToolBar</string>
+    <string name="text">android:logo: This attribute sets the logo of the toolbar.
+android:navigationIcon: This attribute sets the navigation icon of the toolbar.
+android:popupTheme: This attribute sets the theme of the popup menu that is displayed when the overflow icon is clicked.
+android:contentInsetStart: This attribute sets the amount of space that is inset from the left edge of the toolbar.
+android:contentInsetEnd: This attribute sets the amount of space that is inset from the right edge of the toolbar.
+android:contentInsetLeft: This attribute sets the amount of space that is inset from the top edge of the toolbar.
+android:contentInsetRight: This attribute sets the amount of space that is inset from the bottom edge of the toolbar.
+android:gravity: This attribute sets the gravity of the toolbar.
+android:maxButtonHeight: This attribute sets the maximum height of the overflow icon.
+android:collapseContentDescription: This attribute sets the description of the icon that is displayed when the toolbar is collapsed.
+android:collapseIcon: This attribute sets the icon that is displayed when the toolbar is collapsed.
+For a complete list of toolbar attributes, please refer to the Android Toolbar documentation: https://developer.android.com/reference/android/widget/Toolbar.</string>
+</resources>

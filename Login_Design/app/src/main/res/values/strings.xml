@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Login_Design</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="create_an_account">Create An Account</string>
+    <string name="create">Create</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="already_have_a_account">Already Have A Account?</string>
+</resources>

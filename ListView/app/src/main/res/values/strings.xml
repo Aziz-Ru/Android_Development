@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ListView</string>
+    <string-array name="District">
+        <item>Lalmonirhat</item>
+        <item>Nilphamary</item>
+        <item>Rangpur</item>
+        <item>Dhaka</item>
+    </string-array>
+</resources>

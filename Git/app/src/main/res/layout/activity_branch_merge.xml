@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_branch"
+    tools:context=".Branch_Merge">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/branch_toolbar"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/Branch_description_1"
+                android:id="@+id/Branch_Id1"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Branch_Id1"
+                android:src="@drawable/git_branch"
+                android:id="@+id/Git_Branch_Image_1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Git_Branch_Image_1"
+                android:layout_marginTop="10dp"
+                android:text="@string/Branch_description_2"
+                android:id="@+id/Branch_Id2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Branch_Id2"
+                android:layout_marginTop="10dp"
+                android:text="@string/Git_diff_1"
+                android:id="@+id/Branch_Id3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Branch_Id3"
+                android:layout_marginTop="10dp"
+                android:text="@string/Git_branch_name_change"
+                android:id="@+id/Branch_Id4"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Branch_Id4"
+                android:layout_marginTop="10dp"
+                android:text="@string/Branch_description_3"
+                android:id="@+id/Branch_Id5"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Branch_Id5"
+                android:src="@drawable/git_merge"
+                android:id="@+id/Git_Merge_Image"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+</com.google.android.material.appbar.AppBarLayout >
