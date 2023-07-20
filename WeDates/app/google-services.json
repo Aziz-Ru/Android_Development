@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "252621831052",
+    "project_id": "we-dates",
+    "storage_bucket": "we-dates.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252621831052:android:54fa3804681a7b7686f4a9",
+        "android_client_info": {
+          "package_name": "com.example.wedates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252621831052-3alrmr1156l2l76jkt6adhccocvmlk1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDrPoPMFe2wG80ApLMzzI1Pds8bZnTGDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252621831052-3alrmr1156l2l76jkt6adhccocvmlk1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

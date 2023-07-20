@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Login_Background">#004444</color>
+    <color name="Create_background">#e1fcad</color>
+    <color name="home">#133337</color>
+    <color name="sky_color">#00aeff</color>
+    <color name="sky_light">#00f3ff</color>
+</resources>

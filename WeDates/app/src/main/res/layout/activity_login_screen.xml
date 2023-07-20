@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Create_background"
+    android:orientation="vertical"
+    tools:context=".Login_Screen">
+
+    <androidx.cardview.widget.CardView
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/liner1"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/welcome_txt"
+                android:fontFamily="@font/motion_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Welcome Dates"
+                android:textColor="@color/black"
+                android:textSize="52sp"/>
+            <EditText
+                android:id="@+id/email_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/view_edit"
+                android:hint="Email"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"/>
+            <EditText
+                android:id="@+id/password_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:inputType="textPassword"
+                android:background="@drawable/view_edit"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:hint="Password"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/black"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:padding="16dp"/>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="Don't Have An Account?"
+                    android:layout_margin="8dp"/>
+                <TextView
+                    android:id="@+id/create_account_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Create Account?"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_margin="8dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:padding="12dp"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
