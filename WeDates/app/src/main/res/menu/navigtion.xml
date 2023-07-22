@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:title="Chat Setting"
+            android:id="@+id/Chats_menu"
+            android:icon="@drawable/baseline_chat_24"/>
+        <item
+            android:title="Calls"
+            android:id="@+id/calls_menu"
+            android:icon="@drawable/baseline_call_24"/>
+        <item
+            android:title="Groups"
+            android:id="@+id/groups_menu"
+            android:icon="@drawable/baseline_group_24"/>
+        <item
+            android:title="Contacts"
+            android:id="@+id/contacts_menu"
+            android:icon="@drawable/baseline_add_ic_call_24"/>
+        <item
+            android:title="Invite Friends"
+            android:id="@+id/add_menu"
+            android:icon="@drawable/baseline_person_add_alt_1_24"/>
+
+    </group>
+    <group>
+        <item
+            android:title="Ask Question"
+            android:id="@+id/ask_menu"
+            android:icon="@drawable/baseline_question_mark_24"/>
+        <item
+            android:title="Add Account"
+            android:id="@+id/add_account_menu"
+            android:icon="@drawable/baseline_add_24"/>
+        <item
+            android:title="Setting"
+            android:id="@+id/setting_menu"
+            android:icon="@drawable/baseline_settings_24"/>
+
+        <item
+            android:title="Logout"
+            android:id="@+id/logout_menu"
+            android:icon="@drawable/baseline_logout_24"/>
+    </group>
+
+</menu>

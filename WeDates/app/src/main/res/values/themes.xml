@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.WeDates" parent="Base.Theme.WeDates" />
+
+    <style name="toolbar_font">
+        <item name="fontFamily">@font/megiar</item>
+    </style>
 </resources>

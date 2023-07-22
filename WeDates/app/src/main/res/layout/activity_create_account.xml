@@ -10,12 +10,10 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
       <LinearLayout
           android:background="@color/white"
           android:orientation="vertical"
@@ -24,15 +22,15 @@
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Create Your First Account"
+              android:text="Create Your Account"
               android:textColor="@color/black"
               android:textSize="50sp"
-              android:layout_marginTop="50dp"
-              android:layout_marginStart="8dp"
-              android:layout_marginBottom="30dp"
+              android:layout_marginTop="30dp"
+              android:layout_gravity="center"
+              android:layout_marginBottom="20dp"
               android:fontFamily="@font/motion_pic"/>
           <EditText
-              android:id="@+id/user_name"
+              android:id="@+id/User_Name"
               android:hint="Name"
               android:textColorHint="@color/black"
               android:background="@drawable/view_edit"
@@ -42,8 +40,9 @@
               android:textColor="@color/black"
               android:layout_margin="8dp"/>
           <EditText
-              android:id="@+id/user_email"
+              android:id="@+id/User_Email"
               android:hint="Email"
+              android:inputType="textEmailAddress"
               android:textColorHint="@color/black"
               android:background="@drawable/view_edit"
               android:layout_width="match_parent"
@@ -51,19 +50,11 @@
               android:padding="16dp"
               android:textColor="@color/black"
               android:layout_margin="8dp"/>
+
           <EditText
-              android:id="@+id/user_phone"
-              android:hint="Phone"
-              android:textColorHint="@color/black"
-              android:background="@drawable/view_edit"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:padding="16dp"
-              android:textColor="@color/black"
-              android:layout_margin="8dp"/>
-          <EditText
-              android:id="@+id/user_password"
+              android:id="@+id/User_Password"
               android:hint="Password"
+              android:inputType="textPassword"
               android:textColorHint="@color/black"
               android:background="@drawable/view_edit"
               android:layout_width="match_parent"
@@ -72,8 +63,9 @@
               android:textColor="@color/black"
               android:layout_margin="8dp"/>
           <EditText
-              android:id="@+id/user_confirm_password"
+              android:id="@+id/User_Confirm_Password"
               android:hint="Confirm Password"
+              android:inputType="textPassword"
               android:textColorHint="@color/black"
               android:background="@drawable/view_edit"
               android:layout_width="match_parent"
@@ -101,16 +93,17 @@
                   android:text="Already Have An Account?."
                   android:textSize="18sp"
                   android:textColor="@color/black"
-                  android:layout_margin="8dp"/>
+                  android:layout_margin="10dp"/>
               <TextView
-                  android:id="@+id/Login_Interface"
+                  android:id="@+id/Login_txt_btn"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="Login"
                   android:textStyle="bold"
                   android:textSize="18sp"
                   android:textColor="@color/black"
-                  android:layout_margin="8dp"/>
+                  android:layout_margin="10dp"
+                  />
 
           </LinearLayout>
 

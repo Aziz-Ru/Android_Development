@@ -1,8 +1,11 @@
 package com.example.wedates;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -12,58 +15,68 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.wedates.databinding.ActivityLoginScreenBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login_Screen extends AppCompatActivity {
-EditText Email_user,Pass_user;
-TextView createAccount;
+    ActivityLoginScreenBinding binding;
 FirebaseAuth mAuth;
-Button Login_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_screen);
+        binding=ActivityLoginScreenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         mAuth=FirebaseAuth.getInstance();
-        Email_user=findViewById(R.id.email_user);
-        Pass_user=findViewById(R.id.password_user);
-        Login_btn=findViewById(R.id.Login_button);
-        createAccount=findViewById(R.id.create_account_txt);
-        createAccount.setOnClickListener(view -> startActivity(new Intent(Login_Screen.this, Create_Account.class)));
-        Login_btn.setOnClickListener(view -> Login_Main_activity());
+
+        binding.createAccountTxt.setOnClickListener(view -> startActivity(new Intent(Login_Screen.this,Create_Account.class)));
+        binding.LoginButton.setOnClickListener(view -> Login_Main_activity());
 
     }
 
     private void Login_Main_activity() {
-        String Uemail=Email_user.getText().toString();
-        String Upass=Pass_user.getText().toString();
-        if(!Patterns.EMAIL_ADDRESS.matcher(Uemail).matches()){
-            Email_user.setError("Email is Invalid");
-            return;
-        }
-        else if(Upass.length()<6){
-            Pass_user.setError("Password is less than 6");
-            return;
-        }
-
-        Login_FireBase(Uemail,Upass);
-
-    }
-
-    private void Login_FireBase(String uemail, String upass) {
-        mAuth.signInWithEmailAndPassword(uemail,upass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(binding.emailUser.getText().toString(),binding.passwordUser.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+
+
                 if(task.isSuccessful()){
-                    startActivity(new Intent(Login_Screen.this, MainActivity.class));
-                    finish();
+
+
+                    if(mAuth.getCurrentUser().isEmailVerified()){
+                        startActivity(new Intent(Login_Screen.this, MainActivity.class));
+                        finish();
+                    } else {
+                        AlertDialog.Builder builder=new AlertDialog.Builder(Login_Screen.this);
+                        builder.setTitle("Email is not Verify").setMessage("Please Verify Your Email")
+                                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent next=new Intent(Intent.ACTION_MAIN);
+                                        next.addCategory(Intent.CATEGORY_APP_EMAIL);
+                                        next.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(next);
+                                    }
+                                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        builder.create().show();
+                    }
                 }
                 else {
                     Toast.makeText(Login_Screen.this,task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
+
+}
+
+
 }

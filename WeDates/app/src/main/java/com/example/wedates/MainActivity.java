@@ -7,43 +7,58 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import com.example.wedates.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-TabLayout FragmentHolder;
-ViewPager viewPager;
-DrawerLayout drawerLayout;
-NavigationView navigationView;
-Toolbar toolbar;
+    ActivityMainBinding binding;
+TextView profile_name,profile_phone;
+View headerView;
+DatabaseReference mdatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        drawerLayout=findViewById(R.id.main_activity_DrawerLayout);
-        navigationView=findViewById(R.id.navigation_view);
-        FragmentHolder=findViewById(R.id.main_activity_Tablayout);
-        toolbar=findViewById(R.id.mainactivity_toolbar);
-        viewPager=findViewById(R.id.view_Pager);
 
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.mainactivityToolbar);
         getSupportActionBar().setTitle("We Dates");
+        binding.mainactivityToolbar.setTitleTextAppearance(this,R.style.toolbar_font);
 
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(viewPagerAdapter);
-        FragmentHolder.setupWithViewPager(viewPager);
+        binding.viewPager.setAdapter(viewPagerAdapter);
+        binding.mainActivityTablayout.setupWithViewPager(binding.viewPager);
 
-        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_open,R.string.nav_close);
-        drawerLayout.addDrawerListener(toggle);
+        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,binding.mainActivityDrawerLayout,binding.mainactivityToolbar,R.string.nav_open,R.string.nav_close);
+        binding.mainActivityDrawerLayout.addDrawerListener(toggle);
         toggle.getDrawerArrowDrawable().setColor(getColor(R.color.white));
         toggle.syncState();
+        binding.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.logout_menu){
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(MainActivity.this, Login_Screen.class));
+                }
+                return false;
+            }
+        });
+
 
 
     }
+
 
 
 
